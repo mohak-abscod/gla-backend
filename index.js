@@ -19,6 +19,9 @@ app.use(function (req, res, next) {
 
 app.use(express.json());
 app.post("/", async (req, resp) => {
+  resp.setHeader("Access-Control-Allow-Origin", "*");
+  resp.setHeader("Access-Control-Allow-Methods", "*");
+  resp.setHeader("Access-Control-Allow-Headers", "*");
   let get = new User(req.body);
   let result = await get.save();
   resp.send(result);
