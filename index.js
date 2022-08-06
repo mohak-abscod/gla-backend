@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("./database/config");
 const User = require("./database/user");
+const app = express();
 
 //app.use(cors());
 
@@ -26,6 +27,6 @@ app.post("/temp", async (req, resp) => {
   resp.send(result);
 });
 app.get("/", async (req, resp) => {
-  resp.send(<h1>Hello world</h1>);
+  resp.send("<h1>Hello world</h1>");
 });
 app.listen(5500);
