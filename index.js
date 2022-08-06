@@ -18,11 +18,14 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.json());
-app.post("/", async (req, resp) => {
+app.post("/temp", async (req, resp) => {
   resp.setHeader("Access-Control-Allow-Methods", "*");
   resp.setHeader("Access-Control-Allow-Headers", "*");
   let get = new User(req.body);
   let result = await get.save();
   resp.send(result);
+});
+app.get("/", async (req, resp) => {
+  resp.send(<h1>Hello world</h1>);
 });
 app.listen(5500);
