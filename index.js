@@ -8,7 +8,7 @@ const User = require("./database/user");
 app.use(function (req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://62ee4cec9772e9000905a3b4--bespoke-cranachan-6caef0.netlify.app/"
+    "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f575f2505d4d474485204639dc137cfb"
   ); // update to match the domain you will make the request from
   res.header(
     "Access-Control-Allow-Headers",
