@@ -11,4 +11,4 @@ const formSchema = new mongoose.Schema({
   sponsorAssets: String,
 });
 
-module.exports = mongoose.model("forms", formSchema);
+module.exports = mongoose.model("speakersform", formSchema);

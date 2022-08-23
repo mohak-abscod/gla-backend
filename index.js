@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 require("./database/config");
 const User = require("./database/user");
+const Speaker = require("./database/speakerform");
+
 const app = express();
 
 app.use(cors());
@@ -26,7 +28,13 @@ app.post("/", async (req, resp) => {
   let result = await get.save();
   resp.send(result);
 });
-// app.get("/", async (req, resp) => {
-//   resp.send("<h1>Hello world</h1>");
-// });
+
+app.post("/sponsor", async (req, resp) => {
+  resp.setHeader("Access-Control-Allow-Methods", "*");
+  resp.setHeader("Access-Control-Allow-Headers", "*");
+  let get = new Speaker(req.body);
+  let result = await get.save();
+  resp.send(result);
+});
+
 app.listen(5500);
