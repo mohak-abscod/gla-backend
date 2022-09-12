@@ -101,6 +101,28 @@ app.post("/speaker", async (req, resp) => {
     Sponsor Assets: ${req.body.sponsorAssets} `,
   });
 });
+app.post("/contact", async (req, resp) => {
+  const uri =
+    "mongodb+srv://abscod:abscod12345@cluster0.tlalbb1.mongodb.net/?retryWrites=true&w=majority";
+  const client = new MongoClient(uri);
+  client.connect((err) => {
+    console.log(err);
+  });
+  const collection = client.db("globalLegalAssociation").collection("contacts");
+  collection.insertOne(req.body);
+  console.log(req.body);
+  transporter.sendMail({
+    from: "faiz@globallegalassociation.org",
+    to: "mohakchutani1@gmail.com",
+    subject: `${req.body.name} wants to contact with you`,
+    text: `Here below are the details
+    Name : ${req.body.name}
+    Email : ${req.body.email}
+    Phone Number : ${req.body.phone}
+    Message : ${req.body.text}
+    `,
+  });
+});
 
 app.listen(5500);
 console.log("server running");
