@@ -54,7 +54,7 @@ app.post("/", async (req, resp) => {
   collection.insertOne(req.body);
   transporter.sendMail({
     from: "faiz@globallegalassociation.org",
-    to: "mohakchutani1@gmail.com",
+    to: "faiz@globallegalassociation.org",
     subject: `${req.body.firstName} wants to contact with you`,
     text: `Here below are the details
     first Name : ${req.body.firstName}
@@ -88,7 +88,7 @@ app.post("/speaker", async (req, resp) => {
   collection.insertOne(req.body);
   transporter.sendMail({
     from: "faiz@globallegalassociation.org",
-    to: "mohakchutani1@gmail.com",
+    to: "faiz@globallegalassociation.org",
     subject: `${req.body.firstName} wants to contact with you`,
     text: `Here below are the details
     first Name : ${req.body.firstName}
@@ -113,7 +113,7 @@ app.post("/contact", async (req, resp) => {
   console.log(req.body);
   transporter.sendMail({
     from: "faiz@globallegalassociation.org",
-    to: "mohakchutani1@gmail.com",
+    to: "faiz@globallegalassociation.org",
     subject: `${req.body.name} wants to contact with you`,
     text: `Here below are the details
     Name : ${req.body.name}
