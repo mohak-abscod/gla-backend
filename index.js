@@ -17,7 +17,7 @@ const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   host: "smtpout.secureserver.net",
   port: 465,
-    maxConnections: 1,
+  maxConnections: 1,
   auth: {
     user: "faiz@globallegalassociation.org",
     pass: "f@iz#3904eFs",
@@ -45,7 +45,7 @@ app.post("/", async (req, resp) => {
   collection.insertOne(req.body);
   transporter.sendMail({
     from: "faiz@globallegalassociation.org",
-    to: "faiz@globallegalassociation.org",
+    to: "mohakchutani1@gmail.com",
     subject: `${req.body.firstName} wants to contact with you`,
     text: `Here below are the details
     first Name : ${req.body.firstName}
