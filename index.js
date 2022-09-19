@@ -17,7 +17,7 @@ const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
   host: "smtpout.secureserver.net",
   port: 465,
-  maxConnections: 1,
+  maxConnections: 500,
   auth: {
     user: "faiz@globallegalassociation.org",
     pass: "f@iz#3904eFs",
